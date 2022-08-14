@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: black;
+    font-family: 'Cinzel', serif;
+    transition: 0.5s;
+}
+body.light{
+    background: white;
+}
+.head{
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px green,
+    0 0 30px green,
+    0 0 50px green,
+    0 0 80px green;
+}
+body.light .heading{
+    color: black;
+}
+.mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 10px orange,
+    0 0 20px orange,
+    0 0 30px orange;
+}
+body.light .mode{
+    color: black;
+}
+.option{
+    display: flex;
+    flex-direction: row;
+}
+.center{
+    margin: 0 5px;
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    -webkit-appearance: none;
+    background: rgb(103, 103, 104);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+input:checked[type="checkbox"]{
+    background: #c6c6c6;
+}
+input[type="checkbox"]::before{
+    content: ' ';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 0;
+    right: 0;
+    background: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+input:checked[type="checkbox"]::before{
+    right: 20px;
+}
+
+.bottom{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../clock_dark.png) ;
+    background-size: cover;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.6);
+}
+body.light .clock{
+    background: url(../clock_light.png) ;
+    background-size: cover;
+    border: 4px solid rgb(40, 39, 39);
+    box-shadow: 0 0 10px rgba(77, 75, 75, 0.4),
+    0 0 20px rgb(0, 0, 0,0.4),
+    0 0 30px rgb(0, 0, 0,0.6);
+    
+}
+.clock::before{
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 5px rgb(21, 100, 7),
+    0 0 10px rgb(21, 100, 7);
+    background: white;
+    border-radius: 50%;
+    z-index: 50;
+}
+
+.clock .hour,
+.clock .minute,
+.clock .second{
+    position: absolute;
+}
+.clock .hour, .hr{
+    width: 150px;
+    height: 150px;
+}
+.clock .minute, .min{
+    width: 190px;
+    height: 190px;
+}
+.clock .second, .sec{
+    width: 200px;
+    height: 200px;
+}
+.hr, .min, .sec{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr::before{
+    content: ' ';
+    position: absolute;
+    width: 6px;
+    height: 80px;
+    background: white;
+    box-shadow: 0 0 5px orangered,
+    0 0 10px orangered,
+    0 0 15px orangered;
+    z-index: 3;
+    border-radius: 4px 4px 0 0;
+}
+.min::before{
+    content: ' ';
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    background: white;
+    box-shadow: 0 0 5px blue,
+    0 0 10px blue,
+    0 0 15px blue;
+    z-index: 4;
+    border-radius: 5px 5px 0 0;
+}
+.sec::before{
+    content: ' ';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 5px yellow,
+    0 0 10px yellow,
+    0 0 15px yellow;
+    z-index: 7;
+    border-radius: 5px 5px 0 0;
+}
+.digital{
+    display: block;
+    margin: auto;
+}
+#time{
+    display: flex;
+    gap: 20px;
+    margin: 30px 0px;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg, red,orange,yellow,green,blue,indigo,violet);
+    border-image-slice: 1;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, red,orange,yellow,green,blue,indigo,violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+@keyframes animate{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}

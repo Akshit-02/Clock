@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet"  href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="favicon.png">
+</head>
+<body>
+    <section class="head">
+        <div class="heading">
+            <h1>Clock</h1>
+        </div>
+        <div class="mode">
+            <div>Mode:</div>
+            <div class="option">
+                <span>Light</span>
+                <div class="center">
+                    <input type="checkbox" onclick="toggle()">
+                </div>
+                <span>Dark</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="bottom">
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr">
+                </div>
+            </div>
+            <div class="minute">
+                <div class="min" id="min">
+                </div>
+            </div>
+            <div class="second">
+                <div class="sec" id="sec">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="digital">
+        <div id="time">
+            <div id="hor">00</div>
+            <div class="dot">:</div>
+            <div id="mn">00</div>
+            <div class="dot">:</div>
+            <div id="sc">00</div>
+            <div id="ap">AM</div>
+        </div>
+    </section>
+    <script src="js/index.js"></script>
+</body>
+</html>
